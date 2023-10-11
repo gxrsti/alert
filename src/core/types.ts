@@ -1,5 +1,7 @@
 import React from 'react';
 
+export type ToastType = 'default' | 'success';
+
 export type ToasterPosition =
   | 'top-left'
   | 'top-center'
@@ -12,4 +14,9 @@ export interface ToasterProps {
   position?: ToasterPosition;
   style?: React.CSSProperties;
   className?: string;
+}
+
+export interface Toast {
+  id: number;
+  title?: string;
 }

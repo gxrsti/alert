@@ -1,11 +1,13 @@
-import React from 'react';
+import { Store } from './store';
 
-const success = (message: string | React.ReactNode) => {
-  // create toast
+const success = (message: string) => {
+  Store.add(message, 'success');
 };
-const defaultToast = (message: string | React.ReactNode) => {
-  // create toast
+
+const defaultToast = (message: string) => {
+  Store.add(message, 'default');
 };
+
 const toast = Object.assign(defaultToast, {
   success: success,
 });
