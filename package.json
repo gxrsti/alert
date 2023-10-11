@@ -1,0 +1,55 @@
+{
+  "name": "alert",
+  "version": "1.0.0",
+  "description": "Customizable toast component for React",
+  "author": "Patrick Gerstacker",
+  "license": "MIT",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx",
+    "dev": "tsup src/index.tsx --watch",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "react",
+    "toast",
+    "notifications"
+  ],
+  "homepage": "https://github.com/gxrsti/alert",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gxrsti/alert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gxrsti/alert/issues"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 2
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.13",
+    "@types/react": "^18.0.26",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^6.4.0",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "packageManager": "pnpm@6.32.11"
+}
