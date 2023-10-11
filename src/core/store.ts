@@ -1,19 +1,19 @@
-import { Toast, ToastType } from './types';
+import { IToast, ToastType } from './types';
 
 class Reducer {
-  toasts: Array<Toast>;
-  subscribers: Array<(toast: Toast) => void>;
+  toasts: Array<IToast>;
+  subscribers: Array<(toast: IToast) => void>;
 
   constructor() {
     this.toasts = [];
     this.subscribers = [];
   }
 
-  subscribe(func: (toast: Toast) => void) {
+  subscribe(func: (toast: IToast) => void) {
     this.subscribers = [...this.subscribers, func];
   }
 
-  publish(toast: Toast) {
+  publish(toast: IToast) {
     this.subscribers.forEach((func) => func(toast));
   }
 

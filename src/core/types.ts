@@ -16,7 +16,7 @@ export interface ToasterProps {
   className?: string;
 }
 
-export interface Toast {
+export interface IToast {
   id: number;
   title?: string;
 }

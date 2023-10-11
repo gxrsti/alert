@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Toast, ToasterProps } from '../core/types';
+import { IToast, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 
 const Toaster = ({ position = 'bottom-right', style, className }: ToasterProps) => {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [toasts, setToasts] = useState<IToast[]>([]);
 
   useEffect(() => {
     Store.subscribe((toast) => setToasts([...toasts, toast]));
@@ -29,6 +29,7 @@ const Toaster = ({ position = 'bottom-right', style, className }: ToasterProps) 
           key={index}
         >
           {toast.title}
+          {toast.id}
         </div>
       ))}
     </section>
