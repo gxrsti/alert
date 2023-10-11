@@ -14,8 +14,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx",
-    "dev": "tsup src/index.tsx --watch",
+    "build": "tsup src/index.ts",
+    "dev": "tsup src/index.ts --watch",
     "website": "turbo run dev --filter=website...",
     "format": "prettier --write ."
   },
