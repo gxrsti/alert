@@ -16,6 +16,11 @@ export interface ToasterProps {
   className?: string;
 }
 
+export interface ToastProps {
+  toast: IToast;
+  remove: (toast: IToast) => void;
+}
+
 export interface IToast {
   id: number;
   title?: string;

@@ -2,35 +2,21 @@
 import React, { useEffect, useState } from 'react';
 import { IToast, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
+import { Toast } from './toast';
 
 const Toaster = ({ position = 'bottom-right', style, className }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
 
-  useEffect(() => {
-    Store.subscribe((toast) => setToasts([...toasts, toast]));
-  });
+  Store.subscribe((toast) => setToasts([...toasts, toast]));
+
+  function removeToast(toast: IToast) {
+    setToasts(toasts.filter((x) => x.id !== toast.id));
+  }
 
   return (
     <section style={{ position: 'absolute', bottom: 20, right: 20, display: 'flex', flexDirection: 'column', gap: 5 }}>
-      {toasts.map((toast, index) => (
-        <div
-          style={{
-            paddingTop: '0.5rem',
-            paddingBottom: '0.5rem',
-            paddingLeft: '1rem',
-            paddingRight: '1rem',
-            borderRadius: '0.375rem',
-            backgroundColor: 'rgb(243, 244, 246)',
-            fontWeight: 500,
-            fontSize: '0.875rem',
-            lineHeight: '1.25rem',
-            color: 'rgb(17, 24, 39)',
-          }}
-          key={index}
-        >
-          {toast.title}
-          {toast.id}
-        </div>
+      {toasts.map((toast) => (
+        <Toast toast={toast} remove={removeToast} />
       ))}
     </section>
   );
