@@ -1,10 +1,12 @@
 'use client';
 import React from 'react';
 import { ToastProps } from '../core/types';
+import '../core/styles.css';
 
 const Toast = ({ toast, remove }: ToastProps) => {
   return (
     <div
+      className={`toast-${toast.state}`}
       style={{
         paddingTop: '0.5rem',
         paddingBottom: '0.5rem',
@@ -16,6 +18,7 @@ const Toast = ({ toast, remove }: ToastProps) => {
         fontSize: '0.875rem',
         lineHeight: '1.25rem',
         color: 'rgb(17, 24, 39)',
+        zIndex: toast.id,
       }}
       key={toast.id}
     >

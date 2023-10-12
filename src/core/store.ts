@@ -23,8 +23,9 @@ class Reducer {
   add(message: string, type: ToastType) {
     const toast = {
       id: this.toasts.length,
+      state: 'enter',
       title: message,
-    };
+    } as IToast;
 
     this.toasts = [...this.toasts, toast];
     this.publish(toast);

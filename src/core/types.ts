@@ -10,6 +10,8 @@ export type ToasterPosition =
   | 'bottom-center'
   | 'bottom-right';
 
+export type ToastState = 'enter' | 'idle' | 'leave';
+
 export interface ToasterProps {
   position?: ToasterPosition;
   duration?: number;
@@ -24,5 +26,6 @@ export interface ToastProps {
 
 export interface IToast {
   id: number;
+  state: ToastState;
   title?: string;
 }
