@@ -43,18 +43,19 @@ const Toaster = ({ position = 'bottom-right', duration = 3000, style, className 
       style={{
         position: 'absolute',
         overflow: 'hidden',
-        bottom: 20,
-        right: 20,
         display: 'flex',
         flexDirection: 'column',
         gap: 5,
+        padding: 20,
+        bottom: 0,
+        right: 0,
         transform: 'translateY(0)',
         height: 'fit-content',
         transition: 'all 230ms cubic-bezier(.21, 1.02, .73, 1)',
       }}
     >
       {toasts.map((toast, index) => (
-        <Toast key={index} toast={toast} remove={removeToast} />
+        <Toast key={index} toast={toast} />
       ))}
     </section>
   );

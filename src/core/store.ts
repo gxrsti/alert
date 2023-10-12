@@ -24,6 +24,7 @@ class Reducer {
     const toast = {
       id: this.toasts.length,
       state: 'enter',
+      type: type,
       title: message,
     } as IToast;
 

@@ -21,11 +21,11 @@ export interface ToasterProps {
 
 export interface ToastProps {
   toast: IToast;
-  remove: (toast: IToast) => void;
 }
 
 export interface IToast {
   id: number;
   state: ToastState;
+  type: ToastType;
   title?: string;
 }

@@ -2,8 +2,9 @@
 import React from 'react';
 import { ToastProps } from '../core/types';
 import '../core/styles.css';
+import { SuccessIcon } from './assets';
 
-const Toast = ({ toast, remove }: ToastProps) => {
+const Toast = ({ toast }: ToastProps) => {
   return (
     <div
       className={`toast-${toast.state}`}
@@ -19,11 +20,14 @@ const Toast = ({ toast, remove }: ToastProps) => {
         lineHeight: '1.25rem',
         color: 'rgb(17, 24, 39)',
         zIndex: toast.id,
+        display: 'flex',
+        gap: 4,
+        minWidth: 220,
       }}
       key={toast.id}
     >
+      {toast.type === 'success' && SuccessIcon}
       {toast.title}
-      {toast.id}
     </div>
   );
 };
