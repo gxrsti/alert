@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsup src/index.ts",
     "dev": "tsup src/index.ts --watch",
-    "website": "turbo run dev --filter=website...",
+    "dev:website": "turbo run dev --filter=website...",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -52,6 +52,5 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "packageManager": "pnpm@6.32.11"
+  }
 }
