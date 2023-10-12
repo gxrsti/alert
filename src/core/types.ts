@@ -12,6 +12,7 @@ export type ToasterPosition =
 
 export interface ToasterProps {
   position?: ToasterPosition;
+  duration?: number;
   style?: React.CSSProperties;
   className?: string;
 }

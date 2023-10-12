@@ -4,12 +4,13 @@ import { IToast, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 import { Toast } from './toast';
 
-const Toaster = ({ position = 'bottom-right', style, className }: ToasterProps) => {
+const Toaster = ({ position = 'bottom-right', duration = 3000, style, className }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
 
   useEffect(() => {
     const unsubscribe = Store.subscribe((toast) => {
       setToasts((toasts) => [...toasts, toast]);
+      setTimeout(() => removeToast(toast), duration);
     });
 
     return () => {
