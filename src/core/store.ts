@@ -11,6 +11,9 @@ class Reducer {
 
   subscribe(func: (toast: IToast) => void) {
     this.subscribers = [...this.subscribers, func];
+    return () => {
+      this.subscribers.splice(this.subscribers.indexOf(func), 1);
+    };
   }
 
   publish(toast: IToast) {

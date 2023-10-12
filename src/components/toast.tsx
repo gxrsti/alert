@@ -23,6 +23,7 @@ const Toast = ({ toast, remove }: ToastProps) => {
       key={toast.id}
     >
       {toast.title}
+      {toast.id}
     </div>
   );
 };
