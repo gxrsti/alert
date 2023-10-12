@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+'use client';
+import React from 'react';
 import { ToastProps } from '../core/types';
 
 const Toast = ({ toast, remove }: ToastProps) => {
-  useEffect(() => {
-    setTimeout(() => remove(toast), 3000);
-  }, []);
-
   return (
     <div
       style={{
