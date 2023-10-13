@@ -17,6 +17,7 @@
     "build": "tsup src/index.ts",
     "dev": "tsup src/index.ts --watch",
     "dev:website": "turbo run dev --filter=website...",
+    "test": "jest --runInBand",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -40,11 +41,17 @@
     "tabWidth": 2
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
     "@types/node": "^18.11.13",
     "@types/react": "^18.0.26",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "ts-jest": "^29.1.1",
     "tsup": "^6.4.0",
     "turbo": "1.6",
     "typescript": "^4.8.4"
