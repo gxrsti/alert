@@ -13,6 +13,7 @@ you can use this suggested workflow:
 - Fork this repository.
 - Create a new feature branch based on the `master` branch.
 - Install dependencies by running `pnpm i`.
+- Run the development website by using `pnpm run dev:website`.
 - Implement your changes and confirm that all test are passing.
 - Commit your changes (see the [committing guidelines]).
 - Submit a PR for review.
