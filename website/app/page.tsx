@@ -13,6 +13,9 @@ export default function App() {
         <Button variant="secondary" onClick={() => toast.success('This is a success toast')}>
           Success
         </Button>
+        <Button variant="secondary" onClick={() => toast.error('This is a error toast')}>
+          Fail
+        </Button>
       </div>
     </div>
   );
