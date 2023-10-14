@@ -1,0 +1,53 @@
+name: 'Continuous Integration'
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+          
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Running tests
+        run: pnpm run test
+
+  build:
+    name: 'Build'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+          
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Building project
+        run: pnpm run build
