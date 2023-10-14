@@ -15,7 +15,7 @@ const defaultToast = (message: string) => {
 
 const toast = Object.assign(defaultToast, {
   success: success,
-  error: error
+  error: error,
 });
 
 export { toast };
