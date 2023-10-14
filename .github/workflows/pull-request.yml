@@ -7,47 +7,47 @@ on:
 
 jobs:
   test:
-    name: 'Test'
+    name: 'test'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v4
       
-      - name: Setup Node.js
+      - name: setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           
-      - name: Setup PNPM
+      - name: setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: '8'
           
-      - name: Install dependencies
+      - name: install dependencies
         run: pnpm install
 
-      - name: Running tests
+      - name: run tests
         run: pnpm run test
 
   build:
-    name: 'Build'
+    name: 'build'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v2
       
-      - name: Setup Node.js
+      - name: setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           
-      - name: Setup PNPM
+      - name: setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: '8'
           
-      - name: Install dependencies
+      - name: install dependencies
         run: pnpm install
 
-      - name: Building project
+      - name: run build
         run: pnpm run build
