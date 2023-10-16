@@ -1,4 +1,3 @@
-'use client';
 import { Store } from './store';
 
 const success = (message: string) => {

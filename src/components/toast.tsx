@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { ToastProps } from '../core/types';
 import '../core/styles.css';

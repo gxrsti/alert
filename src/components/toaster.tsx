@@ -1,4 +1,3 @@
-'use client';
 import React, { useCallback, useEffect, useState } from 'react';
 import { IToast, ToastState, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
