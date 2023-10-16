@@ -20,4 +20,4 @@ const ErrorIcon = (
   </svg>
 );
 
-export { SuccessIcon,ErrorIcon };
+export { SuccessIcon, ErrorIcon };
