@@ -14,7 +14,7 @@ export default function App() {
           Success
         </Button>
         <Button variant="secondary" onClick={() => toast.error('This is a error toast')}>
-          Fail
+          Error
         </Button>
       </div>
     </div>
