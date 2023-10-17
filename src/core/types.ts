@@ -28,5 +28,6 @@ export interface IToast {
   id: number;
   state: ToastState;
   type: ToastType;
+  zIndex: number;
   title?: string;
 }

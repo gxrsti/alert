@@ -18,7 +18,7 @@ const Toast = ({ toast }: ToastProps) => {
         fontSize: '0.875rem',
         lineHeight: '1.25rem',
         color: 'rgb(17, 24, 39)',
-        zIndex: toast.id,
+        zIndex: toast.zIndex,
         display: 'flex',
         gap: 4,
         minWidth: 220,

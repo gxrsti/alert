@@ -64,7 +64,7 @@ const Toaster = ({ position = 'bottom-right', duration = 3000, reverse = false, 
       }}
     >
       {reversedToasts.map((toast, index) => (
-        <Toast key={index} toast={toast} />
+        <Toast key={index} toast={{ ...toast, zIndex: index }} />
       ))}
     </section>
   );
