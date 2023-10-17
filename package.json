@@ -59,5 +59,8 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "next-themes": "^0.2.1"
   }
 }
