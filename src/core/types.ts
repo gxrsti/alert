@@ -15,6 +15,7 @@ export type ToastState = 'enter' | 'idle' | 'leave';
 export interface ToasterProps {
   position?: ToasterPosition;
   duration?: number;
+  reverse?: boolean;
   style?: React.CSSProperties;
   className?: string;
 }

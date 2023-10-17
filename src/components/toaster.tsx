@@ -3,7 +3,7 @@ import { IToast, ToastState, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 import { Toast } from './toast';
 
-const Toaster = ({ position = 'bottom-right', duration = 3000, style, className }: ToasterProps) => {
+const Toaster = ({ position = 'bottom-right', duration = 3000, reverse = false, style, className }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
   const [positionState, setPositionState] = useState<React.CSSProperties>({});
 
@@ -46,6 +46,8 @@ const Toaster = ({ position = 'bottom-right', duration = 3000, style, className 
     [],
   );
 
+  const reversedToasts = reverse ? toasts.slice().reverse() : toasts;
+
   return (
     <section
       style={{
@@ -61,7 +63,7 @@ const Toaster = ({ position = 'bottom-right', duration = 3000, style, className 
         ...positionState,
       }}
     >
-      {toasts.map((toast, index) => (
+      {reversedToasts.map((toast, index) => (
         <Toast key={index} toast={toast} />
       ))}
     </section>
