@@ -21,7 +21,7 @@ export default function App() {
     <div className="w-screen h-screen flex justify-center items-center">
       <Toaster position={position}/>
       <div className="flex gap-4">
-        <Select onValueChange={(s) => {
+        <Select value={position} onValueChange={(s) => {
           setPosition(s as ToasterPosition);
         }}>
           <SelectTrigger style={{color: 'black'}} className="w-[180px] h-[auto]">
