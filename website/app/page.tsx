@@ -16,26 +16,42 @@ type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |
 
 export default function App() {
   const [position, setPosition] = useState<ToasterPosition>('bottom-right');
-  
+  const [reverse, setReverse] = useState<boolean>(false);
+
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <Toaster position={position}/>
+      <Toaster reverse={reverse} position={position} />
       <div className="flex gap-4">
-        <Select value={position} onValueChange={(s) => {
-          setPosition(s as ToasterPosition);
-        }}>
-          <SelectTrigger style={{color: 'black'}} className="w-[180px] h-[auto]">
+        <Select
+          value={position}
+          onValueChange={(s) => {
+            setPosition(s as ToasterPosition);
+          }}
+        >
+          <SelectTrigger style={{ color: 'black' }} className="w-[180px] h-[auto]">
             <SelectValue placeholder="Select Position" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Positions</SelectLabel>
-              <SelectItem value='top-left'>top-left</SelectItem>
-              <SelectItem value='top-center'>top-center</SelectItem>
-              <SelectItem value='top-right'>top-right</SelectItem>
-              <SelectItem value='bottom-left'>bottom-left</SelectItem>
-              <SelectItem value='bottom-center'>bottom-center</SelectItem>
-              <SelectItem value='bottom-right'>bottom-right</SelectItem>
+              <SelectItem value="top-left">top-left</SelectItem>
+              <SelectItem value="top-center">top-center</SelectItem>
+              <SelectItem value="top-right">top-right</SelectItem>
+              <SelectItem value="bottom-left">bottom-left</SelectItem>
+              <SelectItem value="bottom-center">bottom-center</SelectItem>
+              <SelectItem value="bottom-right">bottom-right</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <Select value={reverse.toString()} onValueChange={() => setReverse((reverse) => !reverse)}>
+          <SelectTrigger style={{ color: 'black' }} className="w-[180px] h-[auto]">
+            <SelectValue placeholder="Reverse Order" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Reverse</SelectLabel>
+              <SelectItem value="true">True</SelectItem>
+              <SelectItem value="false">False</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
