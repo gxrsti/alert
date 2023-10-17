@@ -21,7 +21,7 @@ export default function App() {
   const [reverse, setReverse] = useState<boolean>(false);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="w-full min-h-full flex justify-center items-center">
       <Toaster reverse={reverse} position={position} />
       <div className="flex flex-col gap-4 justify-center items-center">
         <div className="flex gap-4">
