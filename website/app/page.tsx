@@ -59,7 +59,9 @@ export default function App() {
           </Select>
           <div className="flex items-center space-x-2">
             <Switch id="reverse" checked={reverse} onCheckedChange={() => setReverse((reverse) => !reverse)} />
-            <Label htmlFor="reverse">Reverse</Label>
+            <Label className="text-gray-900" htmlFor="reverse">
+              Reverse
+            </Label>
           </div>
         </div>
       </div>
