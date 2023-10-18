@@ -19,10 +19,11 @@ type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |
 export default function App() {
   const [position, setPosition] = useState<ToasterPosition>('bottom-right');
   const [reverse, setReverse] = useState<boolean>(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   return (
     <div className="w-full min-h-full flex justify-center items-center">
-      <Toaster reverse={reverse} position={position} />
+      <Toaster reverse={reverse} position={position} theme={theme} />
       <div className="flex flex-col gap-4 justify-center items-center">
         <div className="flex gap-4">
           <Button variant="secondary" onClick={() => toast('This is a default toast')}>
@@ -63,6 +64,24 @@ export default function App() {
               Reverse
             </Label>
           </div>
+
+          <Select
+            value={theme}
+            onValueChange={(s) => {
+              setTheme(s as 'light' | 'dark');
+            }}
+          >
+            <SelectTrigger style={{ color: 'black' }} className="w-[180px] h-[auto]">
+              <SelectValue placeholder="Select Theme" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Themes</SelectLabel>
+                <SelectItem value="light">Light Theme</SelectItem>
+                <SelectItem value="dark">Dark Theme</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </div>
     </div>
