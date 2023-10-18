@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ToastType = 'default' | 'success' | 'error' ;
+export type ToastType = 'default' | 'success' | 'error';
 
 export type ToasterPosition =
   | 'top-left'
@@ -18,6 +18,7 @@ export interface ToasterProps {
   reverse?: boolean;
   style?: React.CSSProperties;
   className?: string;
+  theme?: 'light' | 'dark';
 }
 
 export interface ToastProps {
@@ -30,4 +31,5 @@ export interface IToast {
   type: ToastType;
   zIndex: number;
   title?: string;
+  theme?: 'light' | 'dark';
 }

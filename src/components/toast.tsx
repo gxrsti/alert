@@ -4,6 +4,9 @@ import '../core/styles.css';
 import { ErrorIcon, SuccessIcon } from './assets';
 
 const Toast = ({ toast }: ToastProps) => {
+  const themeBackground = toast.theme === 'light' ? 'rgb(243, 244, 246)' : 'rgb(17, 24, 39)';
+  const themeFont = toast.theme === 'light' ? 'rgb(17, 24, 39)' : 'rgb(243, 244, 246)';
+
   return (
     <div
       className={`toast-${toast.state}`}
@@ -13,11 +16,11 @@ const Toast = ({ toast }: ToastProps) => {
         paddingLeft: '1rem',
         paddingRight: '1rem',
         borderRadius: '0.375rem',
-        backgroundColor: 'rgb(243, 244, 246)',
+        backgroundColor: themeBackground,
         fontWeight: 500,
         fontSize: '0.875rem',
         lineHeight: '1.25rem',
-        color: 'rgb(17, 24, 39)',
+        color: themeFont,
         zIndex: toast.zIndex,
         display: 'flex',
         gap: 4,
