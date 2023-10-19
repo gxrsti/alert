@@ -13,8 +13,22 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Toaster, toast } from 'alert';
 import { useState } from 'react';
+import { Codeblock } from '@/components/codeblock';
 
 type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+const sampleCodeBlock = `
+import { Toaster, toast } from 'alert';
+
+const App = () => {
+  return (
+    <div>
+      <Toaster/>
+      <button onClick={() => toast('This is a toast.')}>Create a toast</button>
+    </div>
+  );
+}
+`;
 
 export default function App() {
   const [position, setPosition] = useState<ToasterPosition>('bottom-right');
@@ -83,6 +97,7 @@ export default function App() {
             </SelectContent>
           </Select>
         </div>
+        <Codeblock code={sampleCodeBlock} />
       </div>
     </div>
   );
