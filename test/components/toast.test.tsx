@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Toast } from '../../src/components/toast';
 import { IToast } from '../../src/core/types';
-import { toastStyle } from '../mocks/styleMock';
+import { darkTheme, lightTheme, toastStyle } from '../mocks/styleMock';
 
 describe('Rendering Toasts', () => {
   const testToast = (toast: IToast) => {
@@ -19,6 +19,12 @@ describe('Rendering Toasts', () => {
       zIndex: toast.zIndex,
     });
 
+    if (toast.theme === 'light') {
+      expect(toastElement).toHaveStyle(lightTheme);
+    } else {
+      expect(toastElement).toHaveStyle(darkTheme);
+    }
+
     if (toast.type === 'success') {
       expect(successIcon).toBeInTheDocument();
     } else if (toast.type === 'error') {
@@ -29,16 +35,30 @@ describe('Rendering Toasts', () => {
     }
   };
 
-  it('should render the default toast', () => {
+  it('should render the default toast with light theme', () => {
     const defaultToast: IToast = {
       id: 1,
       state: 'enter',
       type: 'default',
       zIndex: 1,
       title: 'Default Message',
+      theme: 'light',
     };
 
     testToast(defaultToast);
+  });
+
+  it('should render the default toast with dark theme', () => {
+    const defaultDarkToast: IToast = {
+      id: 1,
+      state: 'enter',
+      type: 'default',
+      zIndex: 1,
+      title: 'Default Message',
+      theme: 'dark',
+    };
+
+    testToast(defaultDarkToast);
   });
 
   it('should render the success toast', () => {
