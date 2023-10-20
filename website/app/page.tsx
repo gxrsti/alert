@@ -13,6 +13,7 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Toaster, toast } from 'alert';
 import { useState } from 'react';
+import Instrctions from '../components/instructions';
 
 type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
@@ -22,6 +23,10 @@ export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   return (
+    <div className='w-full'>
+      <div className=''>
+        <Instrctions/>
+      </div>
     <div className="w-full min-h-full flex justify-center items-center">
       <Toaster reverse={reverse} position={position} theme={theme} />
       <div className="flex flex-col gap-4 justify-center items-center">
@@ -84,6 +89,7 @@ export default function App() {
           </Select>
         </div>
       </div>
+    </div>
     </div>
   );
 }
