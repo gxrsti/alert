@@ -13,7 +13,7 @@ const Toaster = ({
 }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
   const [positionState, setPositionState] = useState<React.CSSProperties>({});
-
+  const [height, setHeight] = useState(0);
   useEffect(() => {
     const unsubscribe = Store.subscribe((toast) => {
       setToasts((toasts) => [...toasts, toast]);
@@ -32,6 +32,10 @@ const Toaster = ({
       [x]: 0,
     });
   }, [position]);
+
+  useEffect(() => {
+    setHeight(toasts.length * 41);
+  }, [toasts]);
 
   function handleToast(toast: IToast) {
     setTimeout(() => updateToastState(toast, 'idle'), 300);
@@ -58,18 +62,19 @@ const Toaster = ({
   return (
     <section
       style={{
-        position: 'absolute',
-        overflow: 'hidden',
+        position: 'fixed',
+        zIndex: 9999,
         display: 'flex',
         flexDirection: 'column',
         gap: 5,
-        padding: 20,
+        margin: 16,
         transform: 'translateY(0)',
-        height: 'fit-content',
+        height: height,
         transition: 'all 230ms cubic-bezier(.21, 1.02, .73, 1)',
         ...positionState,
       }}
     >
+      {position.startsWith('bottom') && !reverse && <div className="flex h-full w-full grow" />}
       {reversedToasts.map((toast, index) => (
         <Toast key={index} toast={{ ...toast, zIndex: index, theme }} />
       ))}
