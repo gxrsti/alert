@@ -1,12 +1,12 @@
 const toasterStyle = {
-  position: 'absolute',
-  overflow: 'hidden',
+  position: 'fixed',
+  zIndex: 9999,
   display: 'flex',
   flexDirection: 'column',
   gap: '5px',
-  padding: '20px',
+  margin: '16px',
   transform: 'translateY(0)',
-  height: 'fit-content',
+  height: '41px',
   transition: 'all 230ms cubic-bezier(.21, 1.02, .73, 1)',
 };
 
