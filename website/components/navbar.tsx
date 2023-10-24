@@ -20,7 +20,7 @@ export function Navbar() {
   }, []);
   return (
     <div className="w-full my-2 px-6 flex justify-center">
-      <div className="w-full grow max-w-screen-2xl flex justify-between p-2">
+      <div className="w-full grow max-w-screen-xl flex justify-between p-2">
         <p className="font-bold text-lg">Alert</p>
         <div className="flex gap-3">
           <Link href="https://github.com/gxrsti/alert" target="_blank">

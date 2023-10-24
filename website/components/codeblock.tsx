@@ -8,7 +8,7 @@ export function Codeblock({ code }: CodeblockProps) {
   return (
     <Highlight theme={themes.github} code={code} language="tsx">
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre style={style} className="px-5 text-sm rounded-md max-w-full overflow-auto">
+        <pre style={style} className="px-5 text-sm rounded-md overflow-auto w-[90vw] max-w-[660px]">
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
               {line.map((token, key) => (
