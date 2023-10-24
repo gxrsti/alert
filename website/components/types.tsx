@@ -35,12 +35,13 @@ export const TypesSection = () => {
     <div className="w-full flex flex-col gap-3">
       <p className="font-medium text-lg">Types</p>
       <div className="flex gap-3">
-        <Button className={getClassName('')} variant="outline" onClick={() => showMessage(messages.default)}>
+        <Button className={getClassName('')} variant="outline" size="sm" onClick={() => showMessage(messages.default)}>
           Default
         </Button>
         <Button
           className={getClassName('success')}
           variant="outline"
+          size="sm"
           onClick={() => showMessage(messages.success, 'success')}
         >
           Success
@@ -48,6 +49,7 @@ export const TypesSection = () => {
         <Button
           className={getClassName('error')}
           variant="outline"
+          size="sm"
           onClick={() => showMessage(messages.error, 'error')}
         >
           Error

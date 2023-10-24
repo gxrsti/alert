@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { InstallationSection } from '@/components/installation';
 import { UsageSection } from '@/components/usage';
 import { TypesSection } from '../components/types';
+import { PositionSection } from '@/components/position';
 
 type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
@@ -27,6 +28,7 @@ export default function App() {
         <InstallationSection />
         <UsageSection />
         <TypesSection />
+        <PositionSection position={position} setPosition={(position) => setPosition(position as ToasterPosition)} />
       </div>
     </div>
   );
