@@ -4,6 +4,7 @@ import { Toaster, toast } from 'alert';
 import { useState } from 'react';
 import { InstallationSection } from '@/components/installation';
 import { UsageSection } from '@/components/usage';
+import { TypesSection } from '../components/types';
 
 type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
@@ -25,6 +26,7 @@ export default function App() {
         </div>
         <InstallationSection />
         <UsageSection />
+        <TypesSection />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Codeblock } from './codeblock';
 
 const codeBlock = `
