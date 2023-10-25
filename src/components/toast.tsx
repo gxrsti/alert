@@ -1,17 +1,3 @@
-/**
- * A Toast component for displaying notifications.
- *
- * @param {Object} toast - The toast notification object.
- *   @property {string} type - The type of the toast ('success' or 'error').
- *   @property {string} theme - The theme for the toast ('light' or 'dark').
- *   @property {string} state - The state of the toast ('idle' or 'leave').
- *   @property {string} title - The text content of the toast.
- *   @property {number} zIndex - The z-index of the toast.
- *   @property {number} id - The unique identifier for the toast.
- *
- * @returns {JSX.Element} - A component for displaying toast notifications.
- */
-
 import React from 'react';
 import { ToastProps } from '../core/types';
 import '../core/styles.css';

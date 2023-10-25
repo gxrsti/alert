@@ -1,17 +1,9 @@
-/**
- * Manages a store of toasts and provides methods for subscribing to, publishing, and adding toasts.
- * @class
- */
 import { IToast, ToastType } from './types';
 
 class Reducer {
   toasts: Array<IToast>;
   subscribers: Array<(toast: IToast) => void>;
 
-  /**
-   * Creates a new Reducer instance with empty toasts and subscribers arrays.
-   * @constructor
-   */
   constructor() {
     this.toasts = [];
     this.subscribers = [];
@@ -55,7 +47,4 @@ class Reducer {
   }
 }
 
-/**
- * The singleton instance of the Reducer class that serves as the central store for toasts.
- */
 export const Store = new Reducer();

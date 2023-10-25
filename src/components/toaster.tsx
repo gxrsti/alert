@@ -1,20 +1,13 @@
-/**
- * Toaster component for displaying toast notifications.
- * @param {object} ToasterProps - Props for configuring the toaster.
- *   @property {string} position - Position to display the toaster (default: 'bottom-right').
- *   @property {number} duration - Duration to display each toast (default: 3000ms).
- *   @property {boolean} reverse - Whether to reverse the order of toasts (default: false).
- *   @property {string} theme - Theme for the toasts (default: 'light').
- *   @property {object} style - Custom CSS style for the toaster.
- *   @property {string} className - Custom CSS class for the toaster.
- * @returns {JSX.Element} - A component for displaying toast notifications.
- */
-
 import React, { useCallback, useEffect, useState } from 'react';
 import { IToast, ToastState, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 import { Toast } from './toast';
 
+/**
+ * Toaster component for displaying toast notifications.
+ * @param {object} ToasterProps - Props for configuring the toaster.
+ * @returns {JSX.Element} - A component for displaying toast notifications.
+ */
 const Toaster = ({
   position = 'bottom-right',
   duration = 3000,

@@ -1,8 +1,3 @@
-/**
- * Test suite for rendering Toast components with different configurations.
- * This suite tests the rendering of Toast components and checks if they are displayed
- * correctly based on their properties, such as type, theme, and state.
- */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Toast } from '../../src/components/toast';
@@ -10,13 +5,6 @@ import { IToast } from '../../src/core/types';
 import { darkTheme, lightTheme, toastStyle } from '../mocks/styleMock';
 
 describe('Rendering Toasts', () => {
-   /**
-   * Helper function to test the rendering of a specific Toast configuration.
-   * It renders the Toast component with the given properties and performs assertions
-   * to check if it is displayed correctly.
-   * @param {IToast} toast - The configuration of the Toast to be tested.
-   */
-  
   const testToast = (toast: IToast) => {
     render(<Toast toast={toast} />);
 

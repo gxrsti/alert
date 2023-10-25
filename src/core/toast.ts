@@ -1,8 +1,8 @@
-/** 
-* Defines a toast notification system using a Store.
-* @param {string} message - The message to be displayed in the toast.
-* @returns {void}
-*/
+/**
+ * Creates a new toast notification
+ * @param {string} message - The message to be displayed in the toast.
+ * @returns {void}
+ */
 
 import { Store } from './store';
 

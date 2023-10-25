@@ -1,13 +1,4 @@
-/**
- * Defines CSS animations for entering and leaving a toast component.
- * @keyframes enterAnimation - Defines the animation for toast entering.
- *   - 0%: Translates the toast 200% down, scales it to 60%, and sets opacity to 0.5.
- *   - 100%: Brings the toast to its original position, scales it to 100%, and sets opacity to 1.
- * @keyframes leaveAnimation - Defines the animation for toast leaving.
- *   - 0%: Translates the toast slightly up, scales it to 100%, and sets opacity to 1.
- *   - 100%: Translates the toast 150% up, scales it to 60%, and sets opacity to 0.
- */
- .toast-enter {
+.toast-enter {
   animation: enterAnimation 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
 }
 

@@ -1,12 +1,3 @@
-/** 
- * Defines styles and themes for a toast notification system.
- * 
- * @constant {object} toasterStyle - Styles for the toaster container.
- * @constant {object} toastStyle - Styles for individual toast messages.
- * @constant {object} lightTheme - Light theme styles for toasts.
- * @constant {object} darkTheme - Dark theme styles for toasts.
- */
-
 const toasterStyle = {
   position: 'fixed',
   zIndex: 9999,
