@@ -25,7 +25,7 @@
     "toast",
     "notifications"
   ],
-  "homepage": "https://github.com/gxrsti/alert",
+  "homepage": "https://alert.gersti.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gxrsti/alert.git"
