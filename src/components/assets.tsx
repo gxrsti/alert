@@ -1,4 +1,5 @@
 import React from 'react';
+import '../core/styles.css';
 
 const SuccessIcon = (
   <svg
@@ -34,4 +35,6 @@ const ErrorIcon = (
   </svg>
 );
 
-export { SuccessIcon, ErrorIcon };
+const LoadingIcon = <div className="loading-icon" />;
+
+export { SuccessIcon, ErrorIcon, LoadingIcon };
