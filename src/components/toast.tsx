@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ToastProps } from '../core/types';
 import '../core/styles.css';
 import { ErrorIcon, LoadingIcon, SuccessIcon } from './assets';

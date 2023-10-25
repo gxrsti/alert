@@ -35,6 +35,6 @@ const ErrorIcon = (
   </svg>
 );
 
-const LoadingIcon = <div className="loading-icon" />;
+const LoadingIcon = <div className="loading-icon" data-testid="loading-icon" />;
 
 export { SuccessIcon, ErrorIcon, LoadingIcon };
