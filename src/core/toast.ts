@@ -4,6 +4,7 @@
  * @returns {void}
  */
 
+import { promise } from './promise';
 import { Store } from './store';
 
 const success = (message: string) => {
@@ -21,6 +22,7 @@ const defaultToast = (message: string) => {
 const toast = Object.assign(defaultToast, {
   success: success,
   error: error,
+  promise: promise,
 });
 
 export { toast };

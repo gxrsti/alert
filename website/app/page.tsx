@@ -6,6 +6,7 @@ import { InstallationSection } from '@/components/installation';
 import { UsageSection } from '@/components/usage';
 import { TypesSection } from '../components/types';
 import { PositionSection } from '@/components/position';
+import { PromiseSection } from '@/components/promise';
 
 type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
@@ -29,6 +30,7 @@ export default function App() {
         <UsageSection />
         <TypesSection />
         <PositionSection position={position} setPosition={(position) => setPosition(position as ToasterPosition)} />
+        <PromiseSection />
       </div>
     </div>
   );

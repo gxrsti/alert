@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ToastType = 'default' | 'success' | 'error';
+export type ToastType = 'default' | 'success' | 'error' | 'loading';
 
 export type ToasterPosition =
   | 'top-left'
