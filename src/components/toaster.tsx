@@ -3,6 +3,11 @@ import { IToast, ToastState, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 import { Toast } from './toast';
 
+/**
+ * Toaster component for displaying toast notifications.
+ * @param {object} ToasterProps - Props for configuring the toaster.
+ * @returns {JSX.Element} - A component for displaying toast notifications.
+ */
 const Toaster = ({
   position = 'bottom-right',
   duration = 3000,

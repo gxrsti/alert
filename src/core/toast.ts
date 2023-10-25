@@ -1,3 +1,9 @@
+/**
+ * Creates a new toast notification
+ * @param {string} message - The message to be displayed in the toast.
+ * @returns {void}
+ */
+
 import { Store } from './store';
 
 const success = (message: string) => {

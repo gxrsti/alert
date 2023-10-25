@@ -9,6 +9,11 @@ class Reducer {
     this.subscribers = [];
   }
 
+  /**
+   * Subscribe a function to receive toast updates.
+   * @param {function} func - A function that will be called when a new toast is published.
+   * @returns {function} - A function to unsubscribe from toast updates.
+   */
   subscribe(func: (toast: IToast) => void) {
     this.subscribers = [...this.subscribers, func];
     return () => {
@@ -16,10 +21,19 @@ class Reducer {
     };
   }
 
+  /**
+   * Publish a new toast to all subscribers.
+   * @param {IToast} toast - The toast object to publish.
+   */
   publish(toast: IToast) {
     this.subscribers.forEach((func) => func(toast));
   }
 
+  /**
+   * Add a new toast to the store and publish it to subscribers.
+   * @param {string} message - The message to display in the toast.
+   * @param {ToastType} type - The type of the toast (e.g., 'info', 'success', 'error').
+   */
   add(message: string, type: ToastType) {
     const toast = {
       id: this.toasts.length,
