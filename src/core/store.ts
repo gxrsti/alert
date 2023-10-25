@@ -33,8 +33,9 @@ class Reducer {
    * Add a new toast to the store and publish it to subscribers.
    * @param {string} message - The message to display in the toast.
    * @param {ToastType} type - The type of the toast (e.g., 'info', 'success', 'error').
+   * @returns {IToast} - The added toast.
    */
-  add(message: string, type: ToastType) {
+  add(message: string, type: ToastType): IToast {
     const toast = {
       id: this.toasts.length,
       state: 'enter',
@@ -43,6 +44,17 @@ class Reducer {
     } as IToast;
 
     this.toasts = [...this.toasts, toast];
+    this.publish(toast);
+    return toast;
+  }
+
+  /**
+   * Update an existing toast and publish it to subscribers.
+   * @param {IToast} message - The toast to update.
+   */
+  update(toast: IToast) {
+    const index = this.toasts.findIndex((x) => x.id === toast.id);
+    this.toasts[index] = toast;
     this.publish(toast);
   }
 }

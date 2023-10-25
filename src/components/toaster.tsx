@@ -21,7 +21,16 @@ const Toaster = ({
   const [height, setHeight] = useState(0);
   useEffect(() => {
     const unsubscribe = Store.subscribe((toast) => {
-      setToasts((toasts) => [...toasts, toast]);
+      setToasts((toasts) => {
+        var index = toasts.findIndex((x) => x.id === toast.id);
+        if (index === -1) {
+          return [...toasts, toast];
+        } else {
+          var copy = [...toasts];
+          copy[index] = toast;
+          return copy;
+        }
+      });
       handleToast(toast);
     });
 
@@ -44,6 +53,7 @@ const Toaster = ({
 
   function handleToast(toast: IToast) {
     setTimeout(() => updateToastState(toast, 'idle'), 300);
+    if (toast.type === 'loading') return;
     setTimeout(() => updateToastState(toast, 'leave'), duration - 100);
     setTimeout(() => removeToast(toast), duration);
   }
