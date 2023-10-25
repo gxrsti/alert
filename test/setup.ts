@@ -15,7 +15,7 @@ afterEach((done) => {
   });
 });
 
-const waitTime = (time) => {
+const waitTime = (time: number) => {
   act(() => {
     jest.advanceTimersByTime(time);
   });
