@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Alert',
   description: 'Customizable toast component for React.',
+  robots: 'index, follow',
+  themeColor: '#ffffff',
+  alternates: { canonical: 'https://alert.gersti.dev' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
