@@ -1,5 +1,11 @@
+/**
+ * Defines two React icons: SuccessIcon and ErrorIcon.
+ * These icons are SVG components for displaying success and error indicators.
+ */
+
 import React from 'react';
 
+// SVG code for a success icon
 const SuccessIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="20" width="20" data-testid="success-icon">
     <path
@@ -10,6 +16,7 @@ const SuccessIcon = (
   </svg>
 );
 
+// SVG code for an error icon
 const ErrorIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="20" width="20" data-testid="error-icon">
     <path

@@ -1,3 +1,7 @@
+/**
+ * Tests various features of the Toaster component.
+ * This suite includes tests for adding and removing toasts, position settings, and toast order.
+ */
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Toaster, toast } from '../../src';
