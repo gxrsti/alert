@@ -9,7 +9,18 @@ const messages = {
   error: 'This is an error toast',
 };
 
-const codeBlock = (method: string, message: string) => `
+const codeBlock = (method: string, message: string) =>
+  method === 'promise'
+    ? `
+const promise = () => new Promise((resolve) => setTimeout(resolve, 2000));
+
+toast.promise(promise, {
+  loading: 'Loading...',
+  success: 'Successfully toasted',
+  error: 'An error occured',
+});
+`
+    : `
 toast${method && `.${method}`}('${message}')
 `;
 
@@ -25,6 +36,19 @@ export const TypesSection = () => {
     } else {
       toast[newMethod](newMessage);
     }
+  };
+
+  const resolvePromise = () => new Promise((resolve) => setTimeout(resolve, 2000));
+  const rejectPromise = () => new Promise((_, reject) => setTimeout(reject, 2000));
+
+  const showPromise = () => {
+    setMethod('promise');
+    var randomBool = Math.random() < 0.5;
+    toast.promise(randomBool ? resolvePromise : rejectPromise, {
+      loading: 'Loading...',
+      success: 'Successfully toasted',
+      error: 'An error occured',
+    });
   };
 
   function getClassName(type: string) {
@@ -53,6 +77,9 @@ export const TypesSection = () => {
           onClick={() => showMessage(messages.error, 'error')}
         >
           Error
+        </Button>
+        <Button className={getClassName('promise')} variant="outline" size="sm" onClick={() => showPromise()}>
+          Promise
         </Button>
       </div>
       <Codeblock code={codeBlock(method, message)} />

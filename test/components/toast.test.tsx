@@ -11,6 +11,7 @@ describe('Rendering Toasts', () => {
     const toastElement = screen.getByText(toast.title);
     const successIcon = screen.queryByTestId('success-icon');
     const errorIcon = screen.queryByTestId('error-icon');
+    const loadingIcon = screen.queryByTestId('loading-icon');
 
     expect(toastElement).toBeInTheDocument();
     expect(toastElement).toHaveClass(`toast-${toast.state}`);
@@ -29,6 +30,8 @@ describe('Rendering Toasts', () => {
       expect(successIcon).toBeInTheDocument();
     } else if (toast.type === 'error') {
       expect(errorIcon).toBeInTheDocument();
+    } else if (toast.type === 'loading') {
+      expect(loadingIcon).toBeInTheDocument();
     } else {
       expect(successIcon).toBeNull();
       expect(errorIcon).toBeNull();
@@ -83,5 +86,17 @@ describe('Rendering Toasts', () => {
     };
 
     testToast(errorToast);
+  });
+
+  it('should render the promise toast', () => {
+    const promiseToast: IToast = {
+      id: 1,
+      state: 'enter',
+      type: 'loading',
+      zIndex: 1,
+      title: 'Promise message',
+    };
+
+    testToast(promiseToast);
   });
 });

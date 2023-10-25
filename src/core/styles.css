@@ -6,6 +6,18 @@
   animation: leaveAnimation 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
 }
 
+.loading-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 100%;
+  border-color: #e0e0e0;
+  border-right-color: #111827;
+  animation: rotateAnimation 1s linear infinite;
+}
+
 @keyframes enterAnimation {
   0% {
     transform: translate3d(0, 200%, 0) scale(0.6);
@@ -25,5 +37,14 @@
   100% {
     transform: translate3d(0, 150%, -1px) scale(0.6);
     opacity: 0;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -6,6 +6,33 @@
 
 import { Store } from './store';
 
+const promise = <T>(
+  promiseFn: () => Promise<T>,
+  options: {
+    loading: string;
+    success: string;
+    error: string;
+  },
+): Promise<T> => {
+  var toast = Store.add(options.loading, 'loading');
+  toast.state = 'idle';
+
+  return promiseFn().then(
+    (value: T) => {
+      toast.type = 'success';
+      toast.title = options.success;
+      Store.update(toast);
+      return value;
+    },
+    (error: any) => {
+      toast.type = 'error';
+      toast.title = options.error;
+      Store.update(toast);
+      return Promise.reject(error);
+    },
+  );
+};
+
 const success = (message: string) => {
   Store.add(message, 'success');
 };
@@ -21,6 +48,7 @@ const defaultToast = (message: string) => {
 const toast = Object.assign(defaultToast, {
   success: success,
   error: error,
+  promise: promise,
 });
 
 export { toast };
