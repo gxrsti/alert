@@ -22,6 +22,7 @@ export function Codeblock({ code }: CodeblockProps) {
             size="icon"
             className="w-8 h-8 absolute right-3 top-3.5 transition-all"
             onClick={handleCopy}
+            aria-label="Copy"
           >
             <Copy className="h-4 w-4" />
           </Button>

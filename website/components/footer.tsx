@@ -10,7 +10,7 @@ export const Footer = () => {
             Gersti
           </a>
         </p>
-        <a href="https://github.com/gxrsti/alert" target="blank">
+        <a href="https://github.com/gxrsti/alert" target="blank" aria-label="Visit the github repository of Alert">
           <GithubIcon />
         </a>
       </div>

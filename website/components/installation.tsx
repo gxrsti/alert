@@ -14,7 +14,7 @@ export const InstallationSection = () => {
       <div className="flex justify-between items-center">
         <p className="font-medium text-lg">Installation</p>
         <Select defaultValue="npm" value={manager} onValueChange={(v) => setManager(v)}>
-          <SelectTrigger style={{ color: 'black' }} className="w-[84px] h-[38px]">
+          <SelectTrigger style={{ color: 'black' }} className="w-[84px] h-[38px]" aria-label="Package Manager">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
