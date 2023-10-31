@@ -14,28 +14,28 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
-    "@types/node": "20.6.5",
+    "@types/node": "20.8.10",
     "@types/react": "18.2.33",
-    "@types/react-dom": "18.2.7",
+    "@types/react-dom": "18.2.14",
     "alert": "workspace:*",
     "autoprefixer": "10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint": "8.50.0",
-    "eslint-config-next": "13.5.2",
-    "lucide-react": "^0.279.0",
-    "next": "13.5.2",
+    "eslint": "8.52.0",
+    "eslint-config-next": "14.0.1",
+    "lucide-react": "^0.291.0",
+    "next": "14.0.1",
     "next-themes": "^0.2.1",
-    "postcss": "8.4.30",
+    "postcss": "8.4.31",
     "prism-react-renderer": "^2.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwind-merge": "^1.14.0",
+    "tailwind-merge": "^2.0.0",
     "tailwindcss": "3.3.5",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.5.4"
+    "prettier-plugin-tailwindcss": "^0.5.6"
   }
 }
