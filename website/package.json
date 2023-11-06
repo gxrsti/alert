@@ -21,7 +21,7 @@
     "autoprefixer": "10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint": "8.52.0",
+    "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
     "lucide-react": "^0.291.0",
     "next": "14.0.1",
