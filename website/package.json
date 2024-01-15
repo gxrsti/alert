@@ -23,7 +23,7 @@
     "clsx": "^2.0.0",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.1",
-    "lucide-react": "^0.291.0",
+    "lucide-react": "^0.309.0",
     "next": "14.0.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.31",
