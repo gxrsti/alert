@@ -14,7 +14,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
-    "@types/node": "20.11.13",
+    "@types/node": "20.11.15",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "alert": "workspace:*",
