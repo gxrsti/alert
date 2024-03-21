@@ -18,7 +18,7 @@
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "alert": "workspace:*",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.19",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "eslint": "8.56.0",
