@@ -7,3 +7,4 @@ updates:
     versioning-strategy: 'increase'
     ignore:
       - dependency-name: 'alert'
+    open-pull-requests-limit: 0
