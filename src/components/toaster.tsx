@@ -91,7 +91,7 @@ const Toaster = ({
     >
       {position.startsWith('bottom') && !reverse && <div className="flex h-full w-full grow" />}
       {reversedToasts.map((toast, index) => (
-        <Toast key={index} toast={{ ...toast, zIndex: index, theme }} />
+        <Toast key={toast.id} toast={{ ...toast, zIndex: index, theme }} />
       ))}
     </section>
   );
