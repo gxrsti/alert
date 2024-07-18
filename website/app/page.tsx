@@ -11,12 +11,11 @@ type ToasterPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |
 
 export default function App() {
   const [position, setPosition] = useState<ToasterPosition>('bottom-right');
-  const [reverse, setReverse] = useState<boolean>(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   return (
     <div className="w-full min-h-full flex justify-center">
-      <Toaster reverse={reverse} position={position} theme={theme} />
+      <Toaster position={position} theme={theme} />
       <div className="flex flex-col gap-10 items-center mt-40">
         <div className="text-center flex flex-col gap-3 items-center">
           <p className="text-4xl font-bold">A!ert</p>
