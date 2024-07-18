@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ToastProps } from '../core/types';
 import '../core/styles.css';
 import { ErrorIcon, LoadingIcon, SuccessIcon } from './assets';
 
-const Toast = ({ toast }: ToastProps) => {
+const Toast = React.memo(({ toast, position }: ToastProps) => {
   const themeBackground = toast.theme === 'light' ? 'rgb(243, 244, 246)' : 'rgb(17, 24, 39)';
   const themeFont = toast.theme === 'light' ? 'rgb(17, 24, 39)' : 'rgb(243, 244, 246)';
 
+  const isTop = position.startsWith('top');
   return (
     <div
-      className={`toast-${toast.state}`}
+      className={`toast-${isTop ? 'top' : 'bottom'}-${toast.state}`}
       style={{
         paddingTop: '0.5rem',
         paddingBottom: '0.5rem',
@@ -21,7 +22,7 @@ const Toast = ({ toast }: ToastProps) => {
         fontSize: '0.875rem',
         lineHeight: '1.25rem',
         color: themeFont,
-        zIndex: toast.zIndex,
+        zIndex: isTop ? 9999 - toast.zIndex : toast.zIndex,
         display: 'flex',
         gap: 4,
         minWidth: 220,
@@ -36,6 +37,6 @@ const Toast = ({ toast }: ToastProps) => {
       {toast.title}
     </div>
   );
-};
+});
 
 export { Toast };

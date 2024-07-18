@@ -28,12 +28,12 @@ describe('Add and remove test', () => {
 
     waitTime(300);
     await waitFor(() => {
-      expect(toastElement).toHaveClass('toast-idle');
+      expect(toastElement).toHaveClass('toast-bottom-idle');
     });
 
     waitTime(mockDuration - 100 - 300);
     await waitFor(() => {
-      expect(toastElement).toHaveClass('toast-leave');
+      expect(toastElement).toHaveClass('toast-bottom-leave');
     });
 
     waitTime(100);
@@ -134,27 +134,5 @@ describe('Toaster reverse test', () => {
     expect(toastElements[0]).toHaveTextContent('This is toast 1');
     expect(toastElements[1]).toHaveTextContent('This is toast 2');
     expect(toastElements[2]).toHaveTextContent('This is toast 3');
-  });
-
-  it('should display toasts in reverse order', () => {
-    render(
-      <>
-        <Toaster reverse />
-        <button type="button" onClick={addThreeToast}>
-          Default
-        </button>
-      </>,
-    );
-
-    expect(Store.toasts).toHaveLength(0);
-
-    const button = screen.getByText('Default');
-    fireEvent.click(button);
-
-    const toastElements = screen.getAllByText(/This is toast/);
-
-    expect(toastElements[0]).toHaveTextContent('This is toast 3');
-    expect(toastElements[1]).toHaveTextContent('This is toast 2');
-    expect(toastElements[2]).toHaveTextContent('This is toast 1');
   });
 });

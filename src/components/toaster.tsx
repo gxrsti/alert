@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { IToast, ToastState, ToasterProps } from '../core/types';
 import { Store } from '../core/store';
 import { Toast } from './toast';
@@ -8,14 +8,7 @@ import { Toast } from './toast';
  * @param {object} ToasterProps - Props for configuring the toaster.
  * @returns {JSX.Element} - A component for displaying toast notifications.
  */
-const Toaster = ({
-  position = 'bottom-right',
-  duration = 3000,
-  reverse = false,
-  theme = 'light',
-  style,
-  className,
-}: ToasterProps) => {
+const Toaster = ({ position = 'bottom-right', duration = 3000, theme = 'light', style, className }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
   const [positionState, setPositionState] = useState<React.CSSProperties>({});
   const [height, setHeight] = useState(0);
@@ -72,7 +65,8 @@ const Toaster = ({
     [],
   );
 
-  const reversedToasts = reverse ? toasts.slice().reverse() : toasts;
+  const isTop = position.startsWith('top');
+  const reversedToasts = useMemo(() => (isTop ? toasts.slice().reverse() : toasts), [isTop, toasts]);
 
   return (
     <section
@@ -89,10 +83,11 @@ const Toaster = ({
         ...positionState,
       }}
     >
-      {position.startsWith('bottom') && !reverse && <div className="flex h-full w-full grow" />}
+      {!isTop && <div className="flex h-full w-full grow" />}
       {reversedToasts.map((toast, index) => (
-        <Toast key={toast.id} toast={{ ...toast, zIndex: index, theme }} />
+        <Toast key={toast.id} toast={{ ...toast, zIndex: index, theme }} position={position} />
       ))}
+      {isTop && <div className="flex h-full w-full grow" />}
     </section>
   );
 };
