@@ -10,7 +10,7 @@ const Toast = React.memo(({ toast, position }: ToastProps) => {
   const isTop = position.startsWith('top');
   return (
     <div
-      className={`toast-${isTop ? 'top' : 'bottom'}-${toast.state}`}
+      className={`toast-${isTop ? 'top' : 'bottom'}-${toast.state} ${toast.className}`}
       style={{
         paddingTop: '0.5rem',
         paddingBottom: '0.5rem',
@@ -28,6 +28,7 @@ const Toast = React.memo(({ toast, position }: ToastProps) => {
         minWidth: 220,
         position: 'relative',
         alignItems: 'center',
+        ...toast.style,
       }}
       key={toast.id}
     >

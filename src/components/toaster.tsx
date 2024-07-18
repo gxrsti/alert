@@ -8,7 +8,7 @@ import { Toast } from './toast';
  * @param {object} ToasterProps - Props for configuring the toaster.
  * @returns {JSX.Element} - A component for displaying toast notifications.
  */
-const Toaster = ({ position = 'bottom-right', duration = 3000, theme = 'light', style, className }: ToasterProps) => {
+const Toaster = ({ position = 'bottom-right', duration = 3000, theme = 'light', options }: ToasterProps) => {
   const [toasts, setToasts] = useState<IToast[]>([]);
   const [positionState, setPositionState] = useState<React.CSSProperties>({});
   const [height, setHeight] = useState(0);
@@ -85,7 +85,11 @@ const Toaster = ({ position = 'bottom-right', duration = 3000, theme = 'light', 
     >
       {!isTop && <div className="flex h-full w-full grow" />}
       {reversedToasts.map((toast, index) => (
-        <Toast key={toast.id} toast={{ ...toast, zIndex: index, theme }} position={position} />
+        <Toast
+          key={toast.id}
+          toast={{ ...toast, zIndex: index, theme, ...options, ...options?.[toast.type] }}
+          position={position}
+        />
       ))}
       {isTop && <div className="flex h-full w-full grow" />}
     </section>
