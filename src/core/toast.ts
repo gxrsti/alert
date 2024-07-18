@@ -15,18 +15,19 @@ const promise = <T>(
   },
 ): Promise<T> => {
   var toast = Store.add(options.loading, 'loading');
-  toast.state = 'idle';
 
   return promiseFn().then(
     (value: T) => {
       toast.type = 'success';
       toast.title = options.success;
+      toast.state = 'idle';
       Store.update(toast);
       return value;
     },
     (error: any) => {
       toast.type = 'error';
       toast.title = options.error;
+      toast.state = 'idle';
       Store.update(toast);
       return Promise.reject(error);
     },
