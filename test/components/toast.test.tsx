@@ -6,7 +6,7 @@ import { darkTheme, lightTheme, toastStyle } from '../mocks/styleMock';
 
 describe('Rendering Toasts', () => {
   const testToast = (toast: IToast) => {
-    render(<Toast toast={toast} />);
+    render(<Toast toast={toast} position="bottom-right" />);
 
     const toastElement = screen.getByText(toast.title);
     const successIcon = screen.queryByTestId('success-icon');
@@ -14,7 +14,7 @@ describe('Rendering Toasts', () => {
     const loadingIcon = screen.queryByTestId('loading-icon');
 
     expect(toastElement).toBeInTheDocument();
-    expect(toastElement).toHaveClass(`toast-${toast.state}`);
+    expect(toastElement).toHaveClass(`toast-bottom-${toast.state}`);
     expect(toastElement).toHaveStyle(toastStyle);
     expect(toastElement).toHaveStyle({
       zIndex: toast.zIndex,
