@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 
 export type ToastType = 'default' | 'success' | 'error' | 'loading';
 
@@ -9,8 +9,6 @@ export type ToasterPosition =
   | 'bottom-left'
   | 'bottom-center'
   | 'bottom-right';
-
-export type ToastState = 'enter' | 'idle' | 'leave';
 
 export type ToastOptions = Partial<Pick<IToast, 'style' | 'className'>>;
 
@@ -26,14 +24,13 @@ export interface ToasterProps {
 
 export interface ToastProps {
   toast: IToast;
+  index: number;
   position: ToasterPosition;
 }
 
 export interface IToast {
   id: number;
-  state: ToastState;
   type: ToastType;
-  zIndex: number;
   title?: string;
   theme?: 'light' | 'dark';
   style?: CSSProperties;
